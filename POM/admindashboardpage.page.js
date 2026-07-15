@@ -1,4 +1,4 @@
-class admindashboardpage {
+class admindashboardpagepage {
   constructor(page) {
     this.page = page
     this.patientbtn = page.locator("//span[text()=' Doctors ']")
