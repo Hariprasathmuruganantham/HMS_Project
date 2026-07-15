@@ -1,0 +1,21 @@
+    import xlsx from "xlsx"
+
+class genric_utility{
+
+    
+    async click(locator){
+    await locator.click()
+    }
+
+    async fill(locator){
+        await locator.fill()
+    }
+
+    async random(locator){
+        await lo
+    }
+
+class excel_utility{
+
+}
+}

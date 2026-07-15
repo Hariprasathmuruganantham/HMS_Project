@@ -1,0 +1,11 @@
+class javautility{
+
+    
+    getrandomnumber(){
+        return Math.floor(Math.random()*1000)
+    }
+}
+export default javautility
+  // Math.random() generates a decimal number between 0 (inclusive) and 1 (exclusive)
+        // Multiplying by 10000 gives a number between 0 and 9999.999...
+        // Math.floor() removes the decimal part and returns an integer
