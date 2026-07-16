@@ -1,7 +1,8 @@
 import {test} from "../../Fixtures/login.fixture"
+import patient_data from "../../Test_data/patient_data.json"
 import patientBookingAptPage from "../../POM/patient/patient_BookAppointmentPage.page"
 test("bookappt",async ({patientLogin}) => {
     let PatientBookingPage= new patientBookingAptPage(patientLogin) 
-    await PatientBookingPage.bookAppointment("General Surgery","8","2026-07-15","10:30 AM")
+    await PatientBookingPage.bookAppointment(patient_data.DtrSpec,patient_data.DtrName,patient_data.date,patient_data.time)
    
 })  
