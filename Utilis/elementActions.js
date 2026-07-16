@@ -26,5 +26,11 @@ export default class elementActions {
         await popup.waitForLoadState()
         return popup
     }
+    async handlingalert(){
+        this.page.on("dialog",(dialog)=>{
+            dialog.accept()
+            console.log(dialog.message())
+        })
+    }
 
 }
