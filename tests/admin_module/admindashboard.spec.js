@@ -1,10 +1,10 @@
 import { test } from "@playwright/test";
-import dotenv from "dotenv";
-import landingpage from "../../POM/admin/landingpage.page";
 import homepage from "../../POM/admin/homepage.page";
+import landingpage from "../../POM/admin/landingpage.page";
 import adminloginpage from "../../POM/admin/adminloginpage.page";
 import admindashboardpage from "../../POM/admin/admindashboardpage.page";
-import admindoctor from "../../Test_data/admindoctor.json"
+import admindoctor from "../../Test_data/admindoctor.json";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -29,24 +29,23 @@ test("admin login implementation1", async ({ page }) => {
     const adminlogin = new adminloginpage(newtab);
 
     // Wait for the admin page to load
-    await newtab.waitForLoadState('load');
+    await newtab.waitForLoadState("load");
 
     // Login
-    //await adminlogin.loginadmin("admin", "Test@12345");
-   await adminlogin.loginadmin(process.env.ADMINUSERNAME, process.env.ADMINPASS)
+    await adminlogin.loginadmin(
+        process.env.ADMINUSERNAME,
+        process.env.ADMINPASS
+    );
+
     // Create Admin Dashboard Page object
     const admindash = new admindashboardpage(newtab);
 
-    // Create Doctor
-//     await admindash.createdoctor(
-//         "Dental Care",
-//         "Azmat",
-//         "600",
-//         "test@gmail.com"
-// );
-
-//through json
-await admindash.createdoctor(admindoctor.doctor.specialization, admindoctor.doctor.doctorName, admindoctor.doctor.consultancyFee, admindoctor.doctor.email )
-
+    // Create Doctor using JSON data
+    await admindash.createdoctor(
+        admindoctor.doctor.specialization,
+        admindoctor.doctor.doctorName,
+        admindoctor.doctor.consultancyFee,
+        admindoctor.doctor.email
+    );
 
 });
