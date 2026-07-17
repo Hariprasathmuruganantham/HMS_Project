@@ -8,7 +8,6 @@ test("admin login implementation", async ({page})=>{
 
     //we are reating object for landingpage
     let landingpag= new landingpage(page)
-
     //we are creating object for homepage
     let homeepag=new homepage(page)
 
