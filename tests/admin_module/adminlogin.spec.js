@@ -15,11 +15,11 @@ test("admin login implementation", async ({page})=>{
 await page.goto(process.env.URLMAIN)
 await landingpag.mainlogin()           //click login, togo adminlogin page
 
-
+let homeepag=new homepage(page)
    
 
   let newtab= await homeepag.clickonadminlogin()
-
+let adminlogin=new adminloginpage(newtab)
   
 //await adminlogin.loginadmin(process.env.ADMINUSERNAME, process.env.ADMINPASS)
 
