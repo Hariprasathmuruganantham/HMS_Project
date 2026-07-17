@@ -17,6 +17,6 @@ export default class patient_BookingAppointmentPage extends basePage{
         await this.elementActions.type(this.aptDate,date)
         await this.elementActions.fill(this.aptTime,time)
         await this.elementActions.click(this.submitBtn)
-        await this.elementActions.handlingalert()
+        //await this.elementActions.handlingalert()
     }
 }
