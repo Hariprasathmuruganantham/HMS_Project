@@ -26,8 +26,7 @@ await landingpag.mainlogin()           //click login, togo adminlogin page
 
   let newtab= await homeepag.clickonadminlogin()
 
-  //we are creating object for loginpage
-     let adminlogin=new adminloginpage(newtab)
+  
 //await adminlogin.loginadmin(process.env.ADMINUSERNAME, process.env.ADMINPASS)
 
 
