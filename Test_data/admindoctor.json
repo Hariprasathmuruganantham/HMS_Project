@@ -1,0 +1,12 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "Test@12345"
+  },
+  "doctor": {
+    "specialization": "Dental Care",
+    "doctorName": "Azmat",
+    "consultancyFee": "600",
+    "email": "test@gmail.com"
+  }
+}
