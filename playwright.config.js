@@ -14,7 +14,7 @@ import { TIMEOUT } from 'node:dns';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
- // globalSetup:'globalsetupfile.js',
+  globalSetup:'globalsetupfile.js',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,

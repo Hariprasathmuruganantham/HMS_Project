@@ -8,8 +8,16 @@ test("admin login implementation", async ({page})=>{
 
     //we are reating object for landingpage
     let landingpag= new landingpage(page)
+<<<<<<< HEAD
 
     
+=======
+    //we are creating object for homepage
+    let homeepag=new homepage(page)
+
+    //we are creating object for loginpage
+     let adminlogin=new adminloginpage(page)
+>>>>>>> b8ef17667e1eb465943b54a2222483caf2a9bd83
 
 
 await page.goto(process.env.URLMAIN)
