@@ -15,13 +15,12 @@ test("admin login implementation", async ({page})=>{
 await page.goto(process.env.URLMAIN)
 await landingpag.mainlogin()           //click login, togo adminlogin page
 
-//we are creating object for homepage
-    let homeepag=new homepage(page)
+
+   
 
   let newtab= await homeepag.clickonadminlogin()
 
-  //we are creating object for loginpage
-     let adminlogin=new adminloginpage(newtab)
+  
 //await adminlogin.loginadmin(process.env.ADMINUSERNAME, process.env.ADMINPASS)
 
 
