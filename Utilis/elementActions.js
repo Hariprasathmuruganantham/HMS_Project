@@ -28,7 +28,7 @@ export default class elementActions {
     }
     async handlingalert(){
         this.page.on("dialog",(dialog)=>{
-            dialog.accept()
+           dialog.accept()
             console.log(dialog.message())
         })
     }
