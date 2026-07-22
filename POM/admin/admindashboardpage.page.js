@@ -9,6 +9,8 @@ class admindashboardpage {
     this.docemail=page.locator('//input[@placeholder="Enter Doctor Email id"]')
     this.admindashsubmitbtn=page.locator('//button[@id="submit"]')
 
+  
+  
   }
 
   async createdoctor(specialization, docname, consfee, docemai) {

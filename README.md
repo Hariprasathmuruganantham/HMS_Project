@@ -289,6 +289,7 @@ git push origin feature/branch-name
 ## Author
 
 **Hariprasath M.**
+**Azmat**
 
 Automation Test Engineer
 
