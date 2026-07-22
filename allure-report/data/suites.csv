@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","9137","admin login implementation","chromium","2026-07-22","passed","2026-07-22","","admin_module\adminlogin.spec.js","",""
+"","6755","bookappt","chromium","2026-07-22","passed","2026-07-22","","patient_module\bookAppt.spec.js","",""
+"","7839","admin login implementation1","chromium","2026-07-22","passed","2026-07-22","","admin_module\admindashboard.spec.js","",""

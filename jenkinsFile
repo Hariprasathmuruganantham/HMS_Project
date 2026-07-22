@@ -1,0 +1,99 @@
+pipeline {
+    agent any
+
+    environment {
+        BASE_URL = credentials('Url_main')
+        USER_LOGIN_URL = credentials('userLoginUrl')
+
+        ADMIN = credentials('admin_creds')
+        PATIENT = credentials('patient_creds')
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Hariprasathmuruganantham/HMS_Project.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
+
+        stage('Install Playwright Browsers') {
+            steps {
+                bat 'npx playwright install'
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                bat '''
+                set URLMAIN=%BASE_URL%
+                set userLoginUrl=%USER_LOGIN_URL%
+
+                set ADMINUSERNAME=%ADMIN_USR%
+                set ADMINPASS=%ADMIN_PSW%
+
+                set patientUserName=%PATIENT_USR%
+                set patientPwd=%PATIENT_PSW%
+
+                npx playwright test 
+                '''
+            }
+        }
+
+    }   
+
+
+    post {
+
+        always {
+             allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allure-results']]
+            ])
+           publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'playwright-report',
+            reportFiles: 'index.html',
+            reportName: 'Playwright Report'
+        ])
+
+            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+        }
+
+        success {
+            echo '✅ HMS automation executed successfully.'
+
+            emailext(
+                subject: "HMS Automation - ${currentBuild.currentResult}",
+                body: "Please find the attached Playwright report.",
+                mimeType: 'text/html',
+                to: 'hariprasathmuruganantham@gmail.com',
+                attachLog: true,
+                attachmentsPattern: 'playwright-report/**'
+            )
+        }
+
+        failure {
+            echo '❌ HMS automation failed. Check the console log and HTML report.'
+
+            emailext(
+                subject: "HMS Automation - FAILED",
+                body: "Please check the Jenkins console log.",
+                mimeType: 'text/html',
+                to: 'hariprasathmuruganantham@gmail.com',
+                attachLog: true,
+                attachmentsPattern: 'playwright-report/**'
+            )
+        }
+    }
+}
