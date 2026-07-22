@@ -6,5 +6,13 @@ export const test=base.extend({
         const page= await Context.newPage()
         await page.goto("http://49.249.29.4:8081/TestServer/Build/Hospital_Doctor_Patient_Management_System/hms/dashboard.php")
         await use(page)
+    },
+    doctorLogin:async({browser},use)=>{
+        const context=await browser.newContext({storageState:"storage/doctor.json"})
+        const page=await context.newPage()
+        await page.goto("http://49.249.29.4:8081/TestServer/Build/Hospital_Doctor_Patient_Management_System/hms/doctor/dashboard.php")
+        await use(page)
     }
+    
+
 })

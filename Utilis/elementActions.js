@@ -12,6 +12,9 @@ export default class elementActions {
     async waitForLoadstate() {
         await this.waitForLoadState()
     }
+    async waitForSelector(locator){
+        await this.waitForSelector(locator);
+    }
     async selectOption(locator, value) {
         await locator.selectOption({ value: value })
     }
