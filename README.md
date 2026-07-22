@@ -286,11 +286,12 @@ git push origin feature/branch-name
 
 ---
 
-## Author
+## Authors
 
-**Hariprasath M.**
-**Azmat**
+- **Hariprasath M.** – Automation Test Engineer
+- **Azmat** – Automation Test Engineer
+- **Rudransh** -Automation Test Engineer
 
-Automation Test Engineer
+### Technologies
 
 Playwright | JavaScript | Jenkins | Git | Manual Testing
