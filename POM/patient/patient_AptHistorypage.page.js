@@ -4,6 +4,5 @@ export default class patient_AptHistory extends basePage{
         super(page)
         this.page=page;
         this.apptHistoryBtn= page,locator("//span[text()=' Appointment History ']")
-        
     }
 }
